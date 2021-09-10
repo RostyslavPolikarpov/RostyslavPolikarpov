@@ -1,7 +1,5 @@
 package ua.polikarpov.hw9.Planet;
 
-import ua.polikarpov.hw9.Planet;
-
 public class Venus implements Planet {
     double accelerationOfGravity = 8.87; // m/(s * s)
 

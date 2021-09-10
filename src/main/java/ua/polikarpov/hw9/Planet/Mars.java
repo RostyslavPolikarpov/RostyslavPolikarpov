@@ -1,7 +1,5 @@
 package ua.polikarpov.hw9.Planet;
 
-import ua.polikarpov.hw9.Planet;
-
 public class Mars implements Planet {
     double accelerationOfGravity = 3.711; // m/(s * s)
 

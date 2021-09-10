@@ -1,7 +1,5 @@
 package ua.polikarpov.hw9.Planet;
 
-import ua.polikarpov.hw9.Planet;
-
 public class Saturn implements Planet {
     double accelerationOfGravity;
 

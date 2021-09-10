@@ -1,7 +1,5 @@
 package ua.polikarpov.hw9.Planet;
 
-import ua.polikarpov.hw9.Venus;
-
 public class Task1 {
 
     public static void main(String[] args) {
