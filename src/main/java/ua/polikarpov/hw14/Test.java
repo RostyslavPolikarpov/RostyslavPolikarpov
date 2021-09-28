@@ -4,37 +4,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Util<T, S> implements Multiplier {
-    S value;
+class Util<T> implements Multiplier<Number> {
+    private T value;
 
-    public void printHashCode(S e) {
+    public void printHashCode(T e) {
         System.out.println("HashCode: " + e.hashCode());
     }
 
-    public void save(S value) {
+    public void save(T value) {
         this.value = value;
     }
 
-    public S get() {
+    public T get() {
         return value;
-    }
-
-    public void sum(Integer one, Integer two) { // should work only with numbers
-        System.out.println(one + two);
     }
 
     @Override
     public Number[] doubleValueIn(Number[] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i] *= array[i];
+            array[i] = array[i].doubleValue() * array[i].doubleValue();
         }
         return array;
     }
 
-    public double sumOfArray(List<? extends T> list) {
+    public <T extends Number> void sum(T one, T two) {
+        System.out.println(one.doubleValue() + two.doubleValue());
+    }
+
+    public double sumOfArray(List<? extends Number> list) {
         double s = 0.0;
-        for (T n : list) {
-            s += n.hashCode();
+        for (Number n : list) {
+            s += n.doubleValue();
         }
         return s;
     }
@@ -52,15 +52,16 @@ interface Multiplier<T extends Number> {
 
 public class Test {
     public static void main(String[] args) {
-        Util<Number, String> util = new Util<>();
+        Util<String> util = new Util<>();
         util.printHashCode("Test");
         util.save("Value");
         System.out.println(util.get());
         Number[] arr = {1, 2, 3, 4, 0, 5, 6, 7};
         System.out.println(Arrays.toString(util.doubleValueIn(arr)));
-        System.out.println("Sum of array: " + util.sumOfArray(Arrays.asList(arr)));
-        List<Number> list = new ArrayList<>();
+        System.out.println(util.sumOfArray(Arrays.asList(arr)));
+        List<Integer> list = new ArrayList<>();
         util.addNumbers(list);
         System.out.println(Arrays.toString(list.toArray()));
+        util.sum(5, 5);
     }
 }
