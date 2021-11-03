@@ -1,6 +1,7 @@
 package ua.polikarpov.hw10;
 
 import org.junit.jupiter.api.Test;
+import ua.polikarpov.hw5.Task2.CheckArray;
 
 import static org.junit.jupiter.api.Assertions.*;
 
