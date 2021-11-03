@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Task2 {
 
     public static void main(String[] args) {
-        int[] array = {7, 6, 5, 4, 3, 2, 1};
+        int[] array = {16, 8, 4, 2, 1};
         System.out.println(Arrays.toString(array));
         System.out.println(checkArray(array));
     }
