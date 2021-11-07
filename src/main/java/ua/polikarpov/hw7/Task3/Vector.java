@@ -1,17 +1,31 @@
-package ua.polikarpov.hw7;
+package ua.polikarpov.hw7.Task3;
 
-import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
-import java.util.Random;
 
 record Vector(double x, double y, double z) {
+
+    public static Vector random() {
+        double x = ThreadLocalRandom.current().nextDouble(-1000, 1000);
+        double y = ThreadLocalRandom.current().nextDouble(-1000, 1000);
+        double z = ThreadLocalRandom.current().nextDouble(-1000, 1000);
+        return new Vector(x, y, z);
+    }
+
+    public static Vector[] randomArray(int arrayLength) {
+        Vector[] array = new Vector[arrayLength];
+        for (int i = 0; i < arrayLength; i++) {
+            array[i] = Vector.random();
+        }
+        return array;
+    }
 
     // длина вектора
     public double vectorLength() {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
     }
 
-    private double scalarProduct(Vector vector) {
+    public double scalarProduct(Vector vector) {
         return (this.x * vector.x + this.y * vector.y + this.z * vector.z);
     }
 
