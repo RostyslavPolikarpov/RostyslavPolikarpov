@@ -24,9 +24,9 @@ public class ThreeException {
         ThreeException variable = new ThreeException();
         int[] array = {1, 2, 3, 4, 5};
         try {
-            //variable.negativeSize(10); // отрицательный размер массива
-            //variable.byZero(array); // деление на ноль
-            //variable.outOfBounds(array, 10); // выход за пределы массива
+            variable.negativeSize(10); // отрицательный размер массива
+            variable.byZero(array); // деление на ноль
+            variable.outOfBounds(array, 10); // выход за пределы массива
         } catch (NegativeArraySizeException | ArithmeticException | ArrayIndexOutOfBoundsException ex) {
             System.out.println("Exception: " + ex);
         }

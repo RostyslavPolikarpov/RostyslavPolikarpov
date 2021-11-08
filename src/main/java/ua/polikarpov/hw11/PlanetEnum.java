@@ -9,7 +9,7 @@ public enum PlanetEnum {
         this.number = number;
     }
 
-    public String getPlanetName() {
+    public String getSatellitesAmount() {
         return number;
     }
 }
